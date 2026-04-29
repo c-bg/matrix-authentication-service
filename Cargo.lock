@@ -1727,7 +1727,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -3118,7 +3118,7 @@ dependencies = [
  "mime",
  "oauth2-types",
  "rand 0.8.5",
- "reqwest",
+ "reqwest 0.12.28",
  "sentry",
  "serde",
  "serde_json",
@@ -3182,7 +3182,7 @@ dependencies = [
  "opentelemetry_sdk",
  "rand 0.8.5",
  "rand_chacha 0.3.1",
- "reqwest",
+ "reqwest 0.12.28",
  "rustls",
  "sd-notify",
  "sentry",
@@ -3341,7 +3341,7 @@ dependencies = [
  "psl",
  "rand 0.8.5",
  "rand_chacha 0.3.1",
- "reqwest",
+ "reqwest 0.12.28",
  "ruma-common",
  "rustls",
  "schemars 0.9.0",
@@ -3377,7 +3377,7 @@ dependencies = [
  "opentelemetry",
  "opentelemetry-http",
  "opentelemetry-semantic-conventions",
- "reqwest",
+ "reqwest 0.12.28",
  "rustls",
  "rustls-platform-verifier",
  "tokio",
@@ -3440,7 +3440,7 @@ dependencies = [
  "camino",
  "convert_case",
  "csv",
- "reqwest",
+ "reqwest 0.12.28",
  "rustls",
  "serde",
  "tokio",
@@ -3549,7 +3549,7 @@ dependencies = [
  "http",
  "mas-http",
  "mas-matrix",
- "reqwest",
+ "reqwest 0.12.28",
  "serde",
  "thiserror 2.0.17",
  "tracing",
@@ -3581,7 +3581,7 @@ dependencies = [
  "p256",
  "rand 0.8.5",
  "rand_chacha 0.3.1",
- "reqwest",
+ "reqwest 0.12.28",
  "rustls",
  "serde",
  "serde_json",
@@ -4080,7 +4080,7 @@ dependencies = [
  "sha1",
  "sha2",
  "sprintf",
- "thiserror 2.0.17",
+ "thiserror 1.0.69",
  "tokio",
  "tracing",
  "urlencoding",
@@ -4124,7 +4124,7 @@ dependencies = [
  "bytes",
  "http",
  "opentelemetry",
- "reqwest",
+ "reqwest 0.12.28",
 ]
 
 [[package]]
@@ -4960,9 +4960,7 @@ dependencies = [
  "base64",
  "bytes",
  "encoding_rs",
- "futures-channel",
  "futures-core",
- "futures-util",
  "h2",
  "http",
  "http-body",
@@ -4983,6 +4981,41 @@ dependencies = [
  "sync_wrapper",
  "tokio",
  "tokio-rustls",
+ "tower",
+ "tower-http",
+ "tower-service",
+ "url",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+]
+
+[[package]]
+name = "reqwest"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62e0021ea2c22aed41653bc7e1419abb2c97e038ff2c33d0e1309e49a97deec0"
+dependencies = [
+ "base64",
+ "bytes",
+ "futures-channel",
+ "futures-core",
+ "futures-util",
+ "h2",
+ "http",
+ "http-body",
+ "http-body-util",
+ "hyper",
+ "hyper-rustls",
+ "hyper-util",
+ "js-sys",
+ "log",
+ "percent-encoding",
+ "pin-project-lite",
+ "serde",
+ "serde_json",
+ "sync_wrapper",
+ "tokio",
  "tower",
  "tower-http",
  "tower-service",
@@ -5131,7 +5164,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -5403,13 +5436,13 @@ checksum = "d767eb0aabc880b29956c35734170f26ed551a859dbd361d140cdbeca61ab1e2"
 
 [[package]]
 name = "sentry"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d92d893ba7469d361a6958522fa440e4e2bc8bf4c5803cd1bf40b9af63f8f9a8"
+checksum = "e8ac94aab850a23d7507307cc505332ed2bafd36c65930dfc5c43610f9e9b477"
 dependencies = [
  "cfg_aliases",
  "httpdate",
- "reqwest",
+ "reqwest 0.13.3",
  "sentry-backtrace",
  "sentry-contexts",
  "sentry-core",
@@ -5421,9 +5454,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-backtrace"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f8784d0a27b5cd4b5f75769ffc84f0b7580e3c35e1af9cd83cb90b612d769cc"
+checksum = "1b803539b9ec0bde4ad759bf07190f6c24062363d519790ac2552dd5a6b21232"
 dependencies = [
  "backtrace",
  "regex",
@@ -5432,9 +5465,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-contexts"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e5eb42f4cd4f9fdfec9e3b07b25a4c9769df83d218a7e846658984d5948ad3e"
+checksum = "7e09c2dadaaa7b2a6dd5e84650b70bbdba504e318a2059a7ff0b9eedc51ef336"
 dependencies = [
  "hostname",
  "libc",
@@ -5446,9 +5479,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-core"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0b1e7ca40f965db239da279bf278d87b7407469b98835f27f0c8e59ed189b06"
+checksum = "56de6f8c10ed1b74543b9654b99d3d9a2d876bd5996f3ecd60afdc30ef40ad0e"
 dependencies = [
  "rand 0.9.4",
  "sentry-types",
@@ -5459,9 +5492,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-panic"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8906f8be87aea5ac7ef937323fb655d66607427f61007b99b7cb3504dc5a156c"
+checksum = "382b8f029465d2e2da7ef25bd08110e91817cfe9e2849ac0547359e0ae50f27e"
 dependencies = [
  "sentry-backtrace",
  "sentry-core",
@@ -5469,9 +5502,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-tower"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "56aebe376310840b49dad4cca55c7b32d9abdc14946cd071d4158ecb149b63a4"
+checksum = "d83ec6e0890d678b012e901b891f07c73e489cee8dc51b8cbafd50ece3a09ee8"
 dependencies = [
  "axum",
  "http",
@@ -5484,9 +5517,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-tracing"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b07eefe04486316c57aba08ab53dd44753c25102d1d3fe05775cc93a13262d9"
+checksum = "77782d2a65e141f20020ec59552aaf9449aeea64bd7624e20c114b8474c4a9ee"
 dependencies = [
  "bitflags",
  "sentry-backtrace",
@@ -5497,9 +5530,9 @@ dependencies = [
 
 [[package]]
 name = "sentry-types"
-version = "0.46.2"
+version = "0.48.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "567711f01f86a842057e1fc17779eba33a336004227e1a1e7e6cc2599e22e259"
+checksum = "00c69667ff14f47aad798e6be2ad8409e350b3ab0b8d72b338b462ed35f7bcc4"
 dependencies = [
  "debugid",
  "hex",
@@ -6198,7 +6231,7 @@ dependencies = [
  "getrandom 0.3.3",
  "once_cell",
  "rustix",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -7321,7 +7354,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]
